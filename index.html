@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>QR Code Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Generator</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body class="bg-gray-100 h-screen">
-    <section class="flex flex-col justify-center items-center h-screen">
-        <h1 class="text-3xl my-8 font-semibold text-blue-600">QR Code Generator</h1>
-        <div id="qr-code" class="mt-8"></div>
-        
+<body>
+
+  <div>
+
+    <section class='flex justify-between items-start'> 
+    
+       <div class='py-20 bg-black w-1/2 md:visible'>
+            <img src="./images/devfest.jpeg" alt="GDSC Image" class='bg-black'>
+        </div>
+
+        <div class='w-1/2 bg-white p-4 mx-8 my-10'>
+
+            <h1 class='my-10 text-3xl font-semibold'>DevFest 2024 Recruitment Form</h1>
+
+        <form id="ticketForm" >
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-semibold text-gray-600">Name</label>
+            <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="branch" class="block text-sm font-semibold text-gray-600">Branch</label>
+            <input type="text" id="branch" name="branch" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="regNumber" class="block text-sm font-semibold text-gray-600">Registration Number</label>
+            <input type="text" id="regNumber" name="regNumber" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="college" class="block text-sm font-semibold text-gray-600">College Name</label>
+            <input type="text" id="college" name="college" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+
+        <button type="button" onclick="generateTicket()" class="bg-green-700  hover:bg-white hover:text-black border hover:border-black transition duration-300 text-white w-full  py-2 px-4 rounded">Submit</button>
+        </form>
+
+        <div id="ticketContainer" class="mt-12">
+        </div>
+    </div>
+
     </section>
 
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <script src='app.js'></script>
+  </div>
+
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script src='script.js'>
+    
+  </script>
+
 </body>
 </html>
